@@ -1,0 +1,24 @@
+{
+  "name": "climate-chage-api",
+  "version": "1.0.0",
+  "description": "this an api for showing climate conditions",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guptaji9630/API-tutorial.git"
+  },
+  "author": "Abhishek Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guptaji9630/API-tutorial/issues"
+  },
+  "homepage": "https://github.com/guptaji9630/API-tutorial#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.11",
+    "express": "^4.18.1"
+  }
+}
