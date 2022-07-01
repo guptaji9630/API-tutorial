@@ -1,4 +1,4 @@
-const PORT = 8000
+const PORT = 8001
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
@@ -14,23 +14,39 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/news', (req,res) => {
-    axios.get('https://www.accuweather.com/en/in/delhi/202396/weather-forecast/202396')
+    console.log("I start here")
+    axios.get('https://easylearning.guru/')
     .then((response) => {
+        // console.log(response.data)
         const html =response.data
         const $ = cheerio.load(html)
-      //console.log(html)
-
-       $('a:contains("weather")', html).each(function() {
-        const title = $(this).text()
-        const url = $(this).attr('href')
-        articles.push({
-            title,
-            url,
+        //  console.log(html)
+        console.log($('img'))
+        $('img').each((data)=>{
+            console.log(data)
         })
 
-       })
+        var t = [1,2,3,4]
+        // t.each()
+    //    $('a:contains("code")', html).each(function(data2) {
+    //     const title = $(dat2).text()
+    //     console.log(dat2)
+    //     const url = $(this).attr('href')
+    //     articles.push({
+    //         title,
+    //         url,
+    //     })
 
-       res.json(articles)
-    }).catch((err)=> console.log(err))
+    //    })
+    // console.log($.html())
+
+    //    console.log(articles)
+       res.send($.html())
+    }).catch((err)=> {
+        console.log("I am here you idiot")
+res.send("I am Error Baby")
+        // console.log(err)
+    })
+    console.log("I am here")
 })
 app.listen(PORT, () => console.log('server running on PORT  $(PORT)'))
